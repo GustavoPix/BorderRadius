@@ -29,6 +29,19 @@ const vm_main = new Vue({
                 this.center = "";
             }
         },
+        copyClipboard()
+        {
+            
+            const copyToClipboard = str => {
+              const el = document.createElement('textarea');
+              el.value = str;
+              document.body.appendChild(el);
+              el.select();
+              document.execCommand('copy');
+              document.body.removeChild(el);
+            };
+            copyToClipboard(this.textCss() + ";");
+        },
         inputCenter(){
             this.center = this.validateValue(this.center);
             if(this.center != "")
@@ -38,9 +51,26 @@ const vm_main = new Vue({
                 this.bottomLeft = this.center;
                 this.bottomRight = this.center;
             }
+        },
+        textCss()
+        {
+            if(this.center!="")
+            {
+                return `border-radius: ${this.center}px`;
+            }
+            else if(this.topLeft == this.bottomRight && this.topRight == this.bottomLeft)
+            {
+                return `border-radius: ${this.topLeft}px ${this.topRight}px`;
+            }
+            else
+            {
+                return `border-radius: ${this.topLeft}px ${this.topRight}px ${this.bottomRight}px ${this.bottomLeft}px`;
+            }
         }
     },
-    watch: {
-        
+    computed: {
+        cssText(){
+            return this.textCss();
+        }
     }
 });
