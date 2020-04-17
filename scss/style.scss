@@ -51,6 +51,34 @@ body{
                 justify-content: center;
             }
         }
+        .css{
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            *{
+            }
+            p{
+                transition: 0.3s ease;
+                margin: 0;
+                margin-right: 20px;
+                padding-top: 5px;
+            }
+            .img{
+                *{
+                    stroke: $color3;
+                }
+            }
+            &:hover{
+                p{
+                    color: $color4;
+                }
+                .img{
+                    *{
+                        stroke: $color4;
+                    }
+                }
+            }
+        }
     }
     
     p{

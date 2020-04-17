@@ -101,6 +101,36 @@ body {
           justify-content: center;
 }
 
+.main .content .css {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.main .content .css p {
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  margin: 0;
+  margin-right: 20px;
+  padding-top: 5px;
+}
+
+.main .content .css .img * {
+  stroke: #ff6363;
+}
+
+.main .content .css:hover p {
+  color: #ffbd69;
+}
+
+.main .content .css:hover .img * {
+  stroke: #ffbd69;
+}
+
 .main p {
   font-size: 15px;
   text-align: center;
