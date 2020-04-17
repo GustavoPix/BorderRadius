@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Dosis:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main" class="main">
+        <div class="logo">
+            <h1>Border Radius</h1>
+        </div>
+        <div class="content">
+            <div class="border-radius" :style="{borderRadius: topLeft + 'px ' + topRight + 'px ' + bottomRight + 'px ' + bottomLeft + 'px'}">
+                <div class="row">
+                    <input type="text" v-model="topLeft" v-on:keyup="keyBorder('topLeft')">
+                    <input type="text" v-model="topRight" v-on:keyup="keyBorder('topRight')">
+                </div>
+                <div class="row center">
+                    <input type="text" v-model="center" v-on:keyup="inputCenter()">
+                </div>
+                <div class="row">
+                    <input type="text" v-model="bottomLeft" v-on:keyup="keyBorder('bottomLeft')">
+                    <input type="text" v-model="bottomRight"  v-on:keyup="keyBorder('bottomRight')">
+                </div>
+            </div>
+            <div class="css">
+                <p>Aqui irá o css do box</p>
+            </div>
+        </div>
+    </div>
+    <p class="credito"><a href="https://prismacode.com" target="_blank">Gustavo Lima de Carvalho - 2020</a></p>
+    <script src="./js/main.js"></script>
+</body>
+</html>
